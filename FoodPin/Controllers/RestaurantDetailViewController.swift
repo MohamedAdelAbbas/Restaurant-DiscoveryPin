@@ -9,34 +9,43 @@
 import UIKit
 
 class RestaurantDetailViewController: UIViewController {
-
-       @IBOutlet var restaurantImageView: UIImageView!
-       @IBOutlet var restaurantNameLabel: UILabel!
-       @IBOutlet var restaurantTypeLabel: UILabel!
-       @IBOutlet var restaurantLocationLabel: UILabel!
-       
-       var restaurant = Restaurant()
+    // MARK: Outlets
+    
+    
+    
+    
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var headerView: RestaurantDetailHeaderView!
+    
+    // MARK: Properties
+    var restaurant = Restaurant()
+    
+    // MARK: View Controller Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        restaurantImageView.image = UIImage(named: restaurant.name)
-        restaurantNameLabel.text = restaurant.name
-        restaurantTypeLabel.text = restaurant.type
-        restaurantLocationLabel.text = restaurant.location
+        
         navigationItem.largeTitleDisplayMode = .never
         
+        // Configure header view
+        headerView.nameLabel.text = restaurant.name
+        headerView.typeLabel.text = restaurant.type
+        headerView.headerImageView.image = UIImage(named: restaurant.image)
+        headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
     }
+    // MARK: Action
     
+    // MARK: Class Methods
+    
+    // MARK: Self Defined Methods
+    
+    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+extension RestaurantDetailViewController{
+    
+    
+    // MARK: - Table view data source
+    
+    // MARK: - Table view delegate
 }
