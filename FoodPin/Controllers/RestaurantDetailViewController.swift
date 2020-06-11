@@ -19,13 +19,13 @@ class RestaurantDetailViewController: UIViewController {
     
     // MARK: Properties
     var restaurant = Restaurant()
-    
+   
     // MARK: View Controller Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        
+        
         navigationItem.largeTitleDisplayMode = .never
         
         // Configure header view
@@ -33,7 +33,29 @@ class RestaurantDetailViewController: UIViewController {
         headerView.typeLabel.text = restaurant.type
         headerView.headerImageView.image = UIImage(named: restaurant.image)
         headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
+        
+        // Set the table view's delegate and data source
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        // Configure the table view's style
+        tableView.separatorStyle = .none
+        
+        // Customize the navigation bar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .white
+        //navigationController?.hidesBarsOnSwipe = false
+        
+        tableView.contentInsetAdjustmentBehavior = .never
+        
     }
+    // MARK: - Status bar
+       
+       override var preferredStatusBarStyle: UIStatusBarStyle {
+           return .lightContent
+       }
+    
     // MARK: Action
     
     // MARK: Class Methods

@@ -37,8 +37,15 @@ class RestaurantTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.cellLayoutMarginsFollowReadableWidth = true
-        
         navigationController?.navigationBar.prefersLargeTitles = true
+         // Customize the navigation bar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        if let customFont = UIFont(name: "Rubik-Medium", size: 40.0) {
+            navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.9058823529, green: 0.2980392157, blue: 0.2352941176, alpha: 1) , NSAttributedString.Key.font: customFont ]
+            
+        }
+      
     }
     
     // MARK: - Table view data source
