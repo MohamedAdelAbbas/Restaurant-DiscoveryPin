@@ -18,7 +18,11 @@ class RestaurantDetailHeaderView: UIView {
         typeLabel.layer.masksToBounds = true
         }
     }
-    @IBOutlet var heartImageView: UIImageView!
+    @IBOutlet var heartImageView: UIImageView! {
+        didSet { heartImageView.image = UIImage(named: "heart-tick")?.withRenderingMode(.alwaysTemplate)
+            heartImageView.tintColor = .white
+        }
+    }
     
    
     
