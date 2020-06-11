@@ -9,22 +9,21 @@
 import UIKit
 
 class RestaurantDetailViewController: UIViewController {
+    
     // MARK: Outlets
-    
-    
-    
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: RestaurantDetailHeaderView!
-    
+
+
+
     // MARK: Properties
     var restaurant = Restaurant()
-   
+
     // MARK: View Controller Life Cycle
-    
-    override func viewDidLoad() {
+
+   override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         navigationItem.largeTitleDisplayMode = .never
         
@@ -44,32 +43,38 @@ class RestaurantDetailViewController: UIViewController {
         // Customize the navigation bar
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.tintColor = .white
-        //navigationController?.hidesBarsOnSwipe = false
+    navigationController?.navigationBar.tintColor = .white
+        navigationController?.hidesBarsOnSwipe = false
         
-        tableView.contentInsetAdjustmentBehavior = .never
+    tableView.contentInsetAdjustmentBehavior = .never
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     // MARK: - Status bar
-       
+
        override var preferredStatusBarStyle: UIStatusBarStyle {
            return .lightContent
        }
-    
+
     // MARK: Action
-    
+
     // MARK: Class Methods
-    
+
     // MARK: Self Defined Methods
-    
-    
+
+
 }
 
 extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDelegate {
-   
+
     // MARK: - Table view data source
-    
-    
+
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -104,6 +109,6 @@ extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDele
         }
     }
     // MARK: - Table view delegate
-    
+
 }
 

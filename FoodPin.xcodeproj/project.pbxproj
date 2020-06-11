@@ -31,6 +31,8 @@
 		76C257DB23EF724E00EAB05F /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C257DA23EF724E00EAB05F /* RestaurantTableViewController.swift */; };
 		76FB037924925A8A0028253B /* RestaurantDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB037824925A8A0028253B /* RestaurantDetailIconTextCell.swift */; };
 		76FB037B24925C940028253B /* RestaurantDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB037A24925C940028253B /* RestaurantDetailTextCell.swift */; };
+		76FB037E2492C3460028253B /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB037D2492C3460028253B /* UIColor+Ext.swift */; };
+		76FB03812492C98F0028253B /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB03802492C98F0028253B /* UINavigationController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		76C257DA23EF724E00EAB05F /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		76FB037824925A8A0028253B /* RestaurantDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailIconTextCell.swift; sourceTree = "<group>"; };
 		76FB037A24925C940028253B /* RestaurantDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTextCell.swift; sourceTree = "<group>"; };
+		76FB037D2492C3460028253B /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		76FB03802492C98F0028253B /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,8 @@
 			children = (
 				76605DD4249230EC00FE34EC /* UIView+Extensions.swift */,
 				76605DD62492313A00FE34EC /* DesignableUITextField.swift */,
+				76FB037D2492C3460028253B /* UIColor+Ext.swift */,
+				76FB03802492C98F0028253B /* UINavigationController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,9 +278,11 @@
 				7638F43A23F100030058E7ED /* RestaurantTableViewCell.swift in Sources */,
 				76C257C723EF6D9600EAB05F /* AppDelegate.swift in Sources */,
 				762B9CA9243103DB009DD90E /* Restaurant.swift in Sources */,
+				76FB03812492C98F0028253B /* UINavigationController+Ext.swift in Sources */,
 				76B2AC1024921BAC0025F02B /* RestaurantDetailHeaderView.swift in Sources */,
 				761C9EAF2401B8AC0027359A /* RestaurantDetailViewController.swift in Sources */,
 				76C257C923EF6D9600EAB05F /* SceneDelegate.swift in Sources */,
+				76FB037E2492C3460028253B /* UIColor+Ext.swift in Sources */,
 				76605DD5249230EC00FE34EC /* UIView+Extensions.swift in Sources */,
 				76C257DB23EF724E00EAB05F /* RestaurantTableViewController.swift in Sources */,
 			);

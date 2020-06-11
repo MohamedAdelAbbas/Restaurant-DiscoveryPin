@@ -139,7 +139,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bzQ-jR-x0c">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="X7g-8G-0u2" userLabel="Header View " customClass="RestaurantDetailHeaderView" customModule="FoodPin" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
@@ -277,7 +277,7 @@
                         <constraints>
                             <constraint firstItem="AP5-Zd-msY" firstAttribute="bottom" secondItem="bzQ-jR-x0c" secondAttribute="bottom" id="7ao-Lw-nin"/>
                             <constraint firstItem="bzQ-jR-x0c" firstAttribute="leading" secondItem="AP5-Zd-msY" secondAttribute="leading" id="EGJ-dG-PRu"/>
-                            <constraint firstItem="bzQ-jR-x0c" firstAttribute="top" secondItem="AP5-Zd-msY" secondAttribute="top" id="MxM-Ou-ONH"/>
+                            <constraint firstItem="bzQ-jR-x0c" firstAttribute="top" secondItem="b1g-gy-0Rk" secondAttribute="top" id="MxM-Ou-ONH"/>
                             <constraint firstItem="AP5-Zd-msY" firstAttribute="trailing" secondItem="bzQ-jR-x0c" secondAttribute="trailing" id="g89-Fb-j7z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AP5-Zd-msY"/>
