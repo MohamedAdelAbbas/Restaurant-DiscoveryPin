@@ -143,6 +143,10 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="twL-PZ-sT1" userLabel="Header Image View">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
                                         </imageView>
+                                        <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XD7-pb-CXE" userLabel="Dim View">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThN-hc-bHq" userLabel="Name Label">
                                             <rect key="frame" x="14" y="271.33333333333331" width="91.666666666666671" height="41.666666666666686"/>
                                             <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="35"/>
@@ -170,11 +174,15 @@
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
+                                        <constraint firstItem="XD7-pb-CXE" firstAttribute="leading" secondItem="X7g-8G-0u2" secondAttribute="leading" id="2Op-JH-nAo"/>
+                                        <constraint firstAttribute="bottom" secondItem="XD7-pb-CXE" secondAttribute="bottom" id="9Dl-D6-Z9l"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ThN-hc-bHq" secondAttribute="trailing" constant="50" id="9vf-xa-HzG"/>
                                         <constraint firstItem="twL-PZ-sT1" firstAttribute="leading" secondItem="X7g-8G-0u2" secondAttribute="leading" id="Ay2-ng-GpO"/>
                                         <constraint firstAttribute="trailing" secondItem="twL-PZ-sT1" secondAttribute="trailing" id="GH2-Nh-qC9"/>
+                                        <constraint firstItem="XD7-pb-CXE" firstAttribute="top" secondItem="X7g-8G-0u2" secondAttribute="top" id="HyA-Y4-Mca"/>
                                         <constraint firstAttribute="bottom" secondItem="7dw-vC-5OH" secondAttribute="bottom" constant="14" id="PH6-0F-Mws"/>
                                         <constraint firstItem="twL-PZ-sT1" firstAttribute="top" secondItem="X7g-8G-0u2" secondAttribute="top" id="Qo6-71-JMX"/>
+                                        <constraint firstAttribute="trailing" secondItem="XD7-pb-CXE" secondAttribute="trailing" id="VQh-hH-aeS"/>
                                         <constraint firstItem="7dw-vC-5OH" firstAttribute="top" secondItem="ThN-hc-bHq" secondAttribute="bottom" constant="3" id="aBY-mi-hzN"/>
                                         <constraint firstItem="0h9-U9-QfL" firstAttribute="centerY" secondItem="7dw-vC-5OH" secondAttribute="centerY" id="acv-r0-MHy"/>
                                         <constraint firstAttribute="bottom" secondItem="twL-PZ-sT1" secondAttribute="bottom" id="gxk-3d-5e2"/>
