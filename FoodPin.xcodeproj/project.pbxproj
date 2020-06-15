@@ -24,6 +24,8 @@
 		76B2AC0E2490DD910025F02B /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76B2AC042490DD910025F02B /* Rubik-Bold.ttf */; };
 		76B2AC1024921BAC0025F02B /* RestaurantDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B2AC0F24921BAC0025F02B /* RestaurantDetailHeaderView.swift */; };
 		76BAE4DB2497C07600DCD3B4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BAE4DA2497C07600DCD3B4 /* MapKit.framework */; };
+		76BAE4DD2497E7BE00DCD3B4 /* RestaurantDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BAE4DC2497E7BE00DCD3B4 /* RestaurantDetailSeparatorCell.swift */; };
+		76BAE4DF2497E91700DCD3B4 /* RestaurantDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BAE4DE2497E91700DCD3B4 /* RestaurantDetailMapCell.swift */; };
 		76C257C723EF6D9600EAB05F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C257C623EF6D9600EAB05F /* AppDelegate.swift */; };
 		76C257C923EF6D9600EAB05F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C257C823EF6D9600EAB05F /* SceneDelegate.swift */; };
 		76C257CE23EF6D9600EAB05F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C257CC23EF6D9600EAB05F /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		76B2AC042490DD910025F02B /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		76B2AC0F24921BAC0025F02B /* RestaurantDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailHeaderView.swift; sourceTree = "<group>"; };
 		76BAE4DA2497C07600DCD3B4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		76BAE4DC2497E7BE00DCD3B4 /* RestaurantDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailSeparatorCell.swift; sourceTree = "<group>"; };
+		76BAE4DE2497E91700DCD3B4 /* RestaurantDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailMapCell.swift; sourceTree = "<group>"; };
 		76C257C323EF6D9600EAB05F /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C257C623EF6D9600EAB05F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C257C823EF6D9600EAB05F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				76B2AC0F24921BAC0025F02B /* RestaurantDetailHeaderView.swift */,
 				76FB037824925A8A0028253B /* RestaurantDetailIconTextCell.swift */,
 				76FB037A24925C940028253B /* RestaurantDetailTextCell.swift */,
+				76BAE4DC2497E7BE00DCD3B4 /* RestaurantDetailSeparatorCell.swift */,
+				76BAE4DE2497E91700DCD3B4 /* RestaurantDetailMapCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,10 +293,12 @@
 				76FB037B24925C940028253B /* RestaurantDetailTextCell.swift in Sources */,
 				76605DD72492313B00FE34EC /* DesignableUITextField.swift in Sources */,
 				76FB037924925A8A0028253B /* RestaurantDetailIconTextCell.swift in Sources */,
+				76BAE4DD2497E7BE00DCD3B4 /* RestaurantDetailSeparatorCell.swift in Sources */,
 				7638F43A23F100030058E7ED /* RestaurantTableViewCell.swift in Sources */,
 				76C257C723EF6D9600EAB05F /* AppDelegate.swift in Sources */,
 				762B9CA9243103DB009DD90E /* Restaurant.swift in Sources */,
 				76FB03812492C98F0028253B /* UINavigationController+Ext.swift in Sources */,
+				76BAE4DF2497E91700DCD3B4 /* RestaurantDetailMapCell.swift in Sources */,
 				76B2AC1024921BAC0025F02B /* RestaurantDetailHeaderView.swift in Sources */,
 				761C9EAF2401B8AC0027359A /* RestaurantDetailViewController.swift in Sources */,
 				76C257C923EF6D9600EAB05F /* SceneDelegate.swift in Sources */,
