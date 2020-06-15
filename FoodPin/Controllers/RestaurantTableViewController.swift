@@ -34,13 +34,22 @@ class RestaurantTableViewController: UITableViewController {
         Restaurant(name: "CASK Pub and Kitchen", type: "Thai", location: "22 Charlwood Street London SW1V 2DY Pimlico", phone: "432-344050", description: "With kitchen serving gourmet burgers. We offer food every day of the week, Monday through to Sunday. Join us every Sunday from 4:30 – 7:30pm for live acoustic music!", image: "CASK Pub and Kitchen.jpg", isVisited: false)
     ]
     // MARK: - View controller life cycle
-       
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.cellLayoutMarginsFollowReadableWidth = true
-        navigationController?.navigationBar.prefersLargeTitles = true
         
+        tableView.cellLayoutMarginsFollowReadableWidth = true
+        setupNavbar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    func setupNavbar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
         // Customize the navigation bar
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -49,28 +58,22 @@ class RestaurantTableViewController: UITableViewController {
         }
         navigationController?.hidesBarsOnSwipe = true
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.hidesBarsOnSwipe = true
-    }
-    // MARK: - Table view data source
-
-
+    
+    
+    // MARK: - Table view data sourc
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return restaurants.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-
+        
+        
         let cellIdentifier = "datacell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for:indexPath)as! RestaurantTableViewCell
         cell.nameLabel.text = restaurants[indexPath.row].name
@@ -80,67 +83,73 @@ class RestaurantTableViewController: UITableViewController {
         cell.heartImageView.isHidden = restaurants[indexPath.row].isVisited ? false : true
         return cell
     }
-
+    
     // MARK: - Table view delegate
-
+    
     // Swipe for More Actions Using UIContextualAction and more feture swipe to right
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
             // Delete the row from the data source
             self.restaurants.remove(at: indexPath.row)
+            
             self.tableView.deleteRows(at: [indexPath], with: .fade)
-
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            // Call completion handler to dismiss the action button
+            
             // Call completion handler with true to indicate
             completionHandler(true)
         }
-
-        // We just modify a few lines of code for shareAction . We added an imageToShare object for image sharing.
-        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completionHandler) in let defaultText = "Just checking in at " + self.restaurants[indexPath.row].name
-
+        
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completionHandler) in
+            let defaultText = "Just checking in at " + self.restaurants[indexPath.row].name
+            
             let activityController: UIActivityViewController
+            
             if let imageToShare = UIImage(named: self.restaurants[indexPath.row].image) {
-                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities:nil)
-            }
-            else {
+                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+            } else  {
                 activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
             }
+            
             if let popoverController = activityController.popoverPresentationController {
                 if let cell = tableView.cellForRow(at: indexPath) {
                     popoverController.sourceView = cell
                     popoverController.sourceRect = cell.bounds
                 }
             }
+            
             self.present(activityController, animated: true, completion: nil)
             completionHandler(true)
         }
+        
         // Set the icon and background color for the actions
-        deleteAction.backgroundColor = #colorLiteral(red: 0.9058823529, green: 0.2980392157, blue: 0.2352941176, alpha: 1)
+        deleteAction.backgroundColor = UIColor(red: 231, green: 76, blue: 60)
         deleteAction.image = UIImage(named: "delete")
-        shareAction.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.5843137255, blue: 0.1490196078, alpha: 1)
+        
+        shareAction.backgroundColor = UIColor(red: 254, green: 149, blue: 38)
         shareAction.image = UIImage(named: "share")
+        
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        
         return swipeConfiguration
     }
-
-
+    
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
         let checkInAction = UIContextualAction(style: .normal, title: "Check-in") { (action, sourceView, completionHandler) in
+            
             let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
             self.restaurants[indexPath.row].isVisited = (self.restaurants[indexPath.row].isVisited) ? false : true
-            cell.heartImageView.isHidden = self.restaurants[indexPath.row].isVisited ?
-                false : true
+            cell.heartImageView.isHidden = self.restaurants[indexPath.row].isVisited ? false : true
+            
             completionHandler(true)
         }
+        
         let checkInIcon = restaurants[indexPath.row].isVisited ? "undo" : "tick"
-        checkInAction.backgroundColor = UIColor(red: 38.0/255.0, green: 162.0/255.0, blue: 78.0/255.0, alpha: 1.0)
+        checkInAction.backgroundColor = UIColor(red: 38, green: 162, blue: 78)
         checkInAction.image = UIImage(named: checkInIcon)
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [checkInAction])
         return swipeConfiguration
     }
-
-
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRestaurantDetail" {
@@ -150,6 +159,6 @@ class RestaurantTableViewController: UITableViewController {
             }
         }
     }
-
-
+    
+    
 }

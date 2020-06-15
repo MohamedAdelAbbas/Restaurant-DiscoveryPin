@@ -58,7 +58,7 @@ class RestaurantDetailViewController: UIViewController {
     // MARK: - Status bar
 
        override var preferredStatusBarStyle: UIStatusBarStyle {
-           return .lightContent
+        return .lightContent
        }
 
     // MARK: Action
