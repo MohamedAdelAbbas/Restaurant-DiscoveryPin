@@ -15,8 +15,6 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: RestaurantDetailHeaderView!
 
-
-
     // MARK: Properties
     var restaurant = Restaurant()
 
@@ -24,36 +22,40 @@ class RestaurantDetailViewController: UIViewController {
 
    override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.largeTitleDisplayMode = .never
-        
-        // Configure header view
-        headerView.nameLabel.text = restaurant.name
-        headerView.typeLabel.text = restaurant.type
-        headerView.headerImageView.image = UIImage(named: restaurant.image)
-        headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
-        
-        // Set the table view's delegate and data source
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        // Configure the table view's style
-        tableView.separatorStyle = .none
-        
-        // Customize the navigation bar
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-    navigationController?.navigationBar.tintColor = .white
-        navigationController?.hidesBarsOnSwipe = false
-        
+        setupTableView()
+        setupNavBar()
+        setupHeaderView()
     tableView.contentInsetAdjustmentBehavior = .never
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    // MARK: Self Defined Methods
+    
+    func setupHeaderView(){
+        navigationItem.largeTitleDisplayMode = .never
+        // Configure header view
+        headerView.nameLabel.text = restaurant.name
+        headerView.typeLabel.text = restaurant.type
+        headerView.headerImageView.image = UIImage(named: restaurant.image)
+        headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
+    }
+    func setupTableView(){
+        // Configure the table view's style
+        tableView.separatorStyle = .none
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+
+    func setupNavBar(){
+        // Customize the navigation bar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.hidesBarsOnSwipe = false
     }
     // MARK: - Status bar
 
@@ -61,20 +63,18 @@ class RestaurantDetailViewController: UIViewController {
         return .lightContent
        }
 
-    // MARK: Action
-
     // MARK: Class Methods
-
-    // MARK: Self Defined Methods
-
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "showMap" {
+               let destinationController = segue.destination as! MapViewController
+               destinationController.restaurant = restaurant
+           }
+       }
 }
 
 extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Table view data source
-
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -122,5 +122,6 @@ extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDele
     }
     // MARK: - Table view delegate
 
+    
 }
 
