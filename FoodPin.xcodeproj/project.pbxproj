@@ -13,7 +13,6 @@
 		762DEF6E2498DFF200973764 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762DEF6D2498DFF200973764 /* ReviewViewController.swift */; };
 		7638F43A23F100030058E7ED /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7638F43923F100020058E7ED /* RestaurantTableViewCell.swift */; };
 		76605DD5249230EC00FE34EC /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76605DD4249230EC00FE34EC /* UIView+Extensions.swift */; };
-		76605DD72492313B00FE34EC /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76605DD62492313A00FE34EC /* DesignableUITextField.swift */; };
 		76B2AC052490DD910025F02B /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76B2ABFB2490DD8F0025F02B /* Rubik-Black.ttf */; };
 		76B2AC062490DD910025F02B /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76B2ABFC2490DD8F0025F02B /* Rubik-MediumItalic.ttf */; };
 		76B2AC072490DD910025F02B /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76B2ABFD2490DD8F0025F02B /* Rubik-BlackItalic.ttf */; };
@@ -39,6 +38,8 @@
 		76FB037B24925C940028253B /* RestaurantDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB037A24925C940028253B /* RestaurantDetailTextCell.swift */; };
 		76FB037E2492C3460028253B /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB037D2492C3460028253B /* UIColor+Ext.swift */; };
 		76FB03812492C98F0028253B /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB03802492C98F0028253B /* UINavigationController+Ext.swift */; };
+		76FD6E252499774A001A15C6 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD6E242499774A001A15C6 /* RoundedTextField.swift */; };
+		76FD6E2724997B13001A15C6 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD6E2624997B13001A15C6 /* DesignableTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +49,6 @@
 		762DEF6D2498DFF200973764 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		7638F43923F100020058E7ED /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		76605DD4249230EC00FE34EC /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		76605DD62492313A00FE34EC /* DesignableUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		76B2ABFB2490DD8F0025F02B /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
 		76B2ABFC2490DD8F0025F02B /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
 		76B2ABFD2490DD8F0025F02B /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -76,6 +76,8 @@
 		76FB037A24925C940028253B /* RestaurantDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTextCell.swift; sourceTree = "<group>"; };
 		76FB037D2492C3460028253B /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		76FB03802492C98F0028253B /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		76FD6E242499774A001A15C6 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		76FD6E2624997B13001A15C6 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				76FB037A24925C940028253B /* RestaurantDetailTextCell.swift */,
 				76BAE4DC2497E7BE00DCD3B4 /* RestaurantDetailSeparatorCell.swift */,
 				76BAE4DE2497E91700DCD3B4 /* RestaurantDetailMapCell.swift */,
+				76FD6E242499774A001A15C6 /* RoundedTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				76605DD4249230EC00FE34EC /* UIView+Extensions.swift */,
-				76605DD62492313A00FE34EC /* DesignableUITextField.swift */,
+				76FD6E2624997B13001A15C6 /* DesignableTextField.swift */,
 				76FB037D2492C3460028253B /* UIColor+Ext.swift */,
 				76FB03802492C98F0028253B /* UINavigationController+Ext.swift */,
 				762DEF6B2498DAE500973764 /* DesignableButton.swift */,
@@ -301,11 +304,11 @@
 			files = (
 				762DEF6C2498DAE500973764 /* DesignableButton.swift in Sources */,
 				76FB037B24925C940028253B /* RestaurantDetailTextCell.swift in Sources */,
-				76605DD72492313B00FE34EC /* DesignableUITextField.swift in Sources */,
 				76FB037924925A8A0028253B /* RestaurantDetailIconTextCell.swift in Sources */,
 				76BAE4DD2497E7BE00DCD3B4 /* RestaurantDetailSeparatorCell.swift in Sources */,
 				7638F43A23F100030058E7ED /* RestaurantTableViewCell.swift in Sources */,
 				76C257C723EF6D9600EAB05F /* AppDelegate.swift in Sources */,
+				76FD6E2724997B13001A15C6 /* DesignableTextField.swift in Sources */,
 				762B9CA9243103DB009DD90E /* Restaurant.swift in Sources */,
 				762DEF6E2498DFF200973764 /* ReviewViewController.swift in Sources */,
 				76FB03812492C98F0028253B /* UINavigationController+Ext.swift in Sources */,
@@ -317,6 +320,7 @@
 				76605DD5249230EC00FE34EC /* UIView+Extensions.swift in Sources */,
 				76C257DB23EF724E00EAB05F /* RestaurantTableViewController.swift in Sources */,
 				76BAE4E12497FE4400DCD3B4 /* MapViewController.swift in Sources */,
+				76FD6E252499774A001A15C6 /* RoundedTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
