@@ -16,28 +16,36 @@ class ReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       SetupBlurEffect()
+        SetupBlurEffect()
+        // start state
+        let moveRightTransform = CGAffineTransform.init(translationX: 600, y: 0)
         // Make the button invisible
         for rateButton in rateButtons {
-        rateButton.alpha = 0
+            rateButton.transform = moveRightTransform // start state
+            rateButton.alpha = 0
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         UIView.animate(withDuration: 0.4, delay: 0.1, options: [], animations: {
             self.rateButtons[0].alpha = 1.0
+            self.rateButtons[0].transform = .identity //end state
         }, completion: nil)
         UIView.animate(withDuration: 0.4, delay: 0.15, options: [], animations: {
             self.rateButtons[1].alpha = 1.0
+            self.rateButtons[1].transform = .identity //end state
         }, completion: nil)
         UIView.animate(withDuration: 0.4, delay: 0.2, options: [], animations: {
             self.rateButtons[2].alpha = 1.0
+            self.rateButtons[2].transform = .identity //end state
         }, completion: nil)
         UIView.animate(withDuration: 0.4, delay: 0.25, options: [], animations: {
             self.rateButtons[3].alpha = 1.0
+            self.rateButtons[3].transform = .identity //end state
         }, completion: nil)
         UIView.animate(withDuration: 0.4, delay: 0.3, options: [], animations: {
             self.rateButtons[4].alpha = 1.0
+            self.rateButtons[4].transform = .identity //end state
         }, completion: nil)
     }
     func SetupBlurEffect(){
