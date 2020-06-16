@@ -109,7 +109,7 @@
                         <barButtonItem key="rightBarButtonItem" image="plus" id="4ez-ks-klf">
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
-                                <segue destination="RiT-6b-5o5" kind="presentation" identifier="addRestaurant" modalPresentationStyle="fullScreen" id="21o-Gg-MRI"/>
+                                <segue destination="RiT-6b-5o5" kind="presentation" identifier="addRestaurant" id="21o-Gg-MRI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -538,9 +538,9 @@
         <!--New Restaurant-->
         <scene sceneID="tjF-KM-EqS">
             <objects>
-                <tableViewController id="7tu-11-24P" sceneMemberID="viewController">
+                <tableViewController id="7tu-11-24P" customClass="NewRestaurantController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="d0B-89-N1B">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="846"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
@@ -747,6 +747,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="900"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="RXj-FU-qPs" id="h6V-qO-yeG"/>
+                        <outlet property="descriptionTextView" destination="92m-0A-FPa" id="Ebx-PU-YMT"/>
+                        <outlet property="nameTextField" destination="nFZ-LE-aYy" id="LKq-Ck-pga"/>
+                        <outlet property="phoneTextField" destination="uYX-c0-zjF" id="dGv-eS-bEW"/>
+                        <outlet property="photoImageView" destination="DLr-ll-sqN" id="Al1-iu-VDA"/>
+                        <outlet property="typeTextField" destination="kTN-kj-2KC" id="uon-aQ-Kmi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flk-SC-qoq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="JeL-kg-tUm" userLabel="Exit" sceneMemberID="exit"/>
@@ -759,7 +767,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RiT-6b-5o5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="TPk-5J-Az9">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

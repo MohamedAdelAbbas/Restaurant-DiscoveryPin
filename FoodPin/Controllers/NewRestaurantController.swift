@@ -12,6 +12,8 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate {
 
     // MARK: Outlets
     @IBOutlet var photoImageView: UIImageView!
+    
+   
     @IBOutlet var nameTextField: RoundedTextField! {
         didSet {
             nameTextField.tag = 1
