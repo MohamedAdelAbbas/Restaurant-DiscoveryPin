@@ -59,6 +59,10 @@ class RestaurantTableViewController: UITableViewController {
         navigationController?.hidesBarsOnSwipe = true
     }
     
+    //MARK: Action
+    @IBAction func unwindToHome(segue: UIStoryboardSegue) {
+        dismiss(animated: true, completion: nil)
+    }
     
     // MARK: - Table view data sourc
     override func numberOfSections(in tableView: UITableView) -> Int {
