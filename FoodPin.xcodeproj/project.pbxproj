@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		761C9EAF2401B8AC0027359A /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761C9EAE2401B8AC0027359A /* RestaurantDetailViewController.swift */; };
 		762B9CA9243103DB009DD90E /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B9CA8243103DB009DD90E /* Restaurant.swift */; };
+		762DEF6C2498DAE500973764 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762DEF6B2498DAE500973764 /* DesignableButton.swift */; };
+		762DEF6E2498DFF200973764 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762DEF6D2498DFF200973764 /* ReviewViewController.swift */; };
 		7638F43A23F100030058E7ED /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7638F43923F100020058E7ED /* RestaurantTableViewCell.swift */; };
 		76605DD5249230EC00FE34EC /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76605DD4249230EC00FE34EC /* UIView+Extensions.swift */; };
 		76605DD72492313B00FE34EC /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76605DD62492313A00FE34EC /* DesignableUITextField.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		761C9EAE2401B8AC0027359A /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		762B9CA8243103DB009DD90E /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		762DEF6B2498DAE500973764 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		762DEF6D2498DFF200973764 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		7638F43923F100020058E7ED /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		76605DD4249230EC00FE34EC /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		76605DD62492313A00FE34EC /* DesignableUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				76C257DA23EF724E00EAB05F /* RestaurantTableViewController.swift */,
 				761C9EAE2401B8AC0027359A /* RestaurantDetailViewController.swift */,
 				76BAE4E02497FE4400DCD3B4 /* MapViewController.swift */,
+				762DEF6D2498DFF200973764 /* ReviewViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				76605DD62492313A00FE34EC /* DesignableUITextField.swift */,
 				76FB037D2492C3460028253B /* UIColor+Ext.swift */,
 				76FB03802492C98F0028253B /* UINavigationController+Ext.swift */,
+				762DEF6B2498DAE500973764 /* DesignableButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				762DEF6C2498DAE500973764 /* DesignableButton.swift in Sources */,
 				76FB037B24925C940028253B /* RestaurantDetailTextCell.swift in Sources */,
 				76605DD72492313B00FE34EC /* DesignableUITextField.swift in Sources */,
 				76FB037924925A8A0028253B /* RestaurantDetailIconTextCell.swift in Sources */,
@@ -300,6 +307,7 @@
 				7638F43A23F100030058E7ED /* RestaurantTableViewCell.swift in Sources */,
 				76C257C723EF6D9600EAB05F /* AppDelegate.swift in Sources */,
 				762B9CA9243103DB009DD90E /* Restaurant.swift in Sources */,
+				762DEF6E2498DFF200973764 /* ReviewViewController.swift in Sources */,
 				76FB03812492C98F0028253B /* UINavigationController+Ext.swift in Sources */,
 				76BAE4DF2497E91700DCD3B4 /* RestaurantDetailMapCell.swift in Sources */,
 				76B2AC1024921BAC0025F02B /* RestaurantDetailHeaderView.swift in Sources */,

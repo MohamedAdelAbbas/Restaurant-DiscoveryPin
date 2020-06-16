@@ -49,7 +49,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         })
     }
     
-    //MARK: Customizing the Annotation
+    //MARK: 
     
    // MARK: MKMapViewDelegate methods
     

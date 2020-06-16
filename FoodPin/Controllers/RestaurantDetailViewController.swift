@@ -65,11 +65,19 @@ class RestaurantDetailViewController: UIViewController {
 
     // MARK: Class Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "showMap" {
-               let destinationController = segue.destination as! MapViewController
-               destinationController.restaurant = restaurant
-           }
-       }
+        if segue.identifier == "showMap" {
+            let destinationController = segue.destination as! MapViewController
+            destinationController.restaurant = restaurant
+        }else if segue.identifier == "showReview" {
+            let destinationController = segue.destination as! ReviewViewController
+            destinationController.restaurant = restaurant
+        }
+    }
+    
+    //MARK: Action
+    @IBAction func close(segue: UIStoryboardSegue) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDelegate {

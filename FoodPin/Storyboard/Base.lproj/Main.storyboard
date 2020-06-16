@@ -135,11 +135,11 @@
             <objects>
                 <viewController id="I8n-J6-Ahr" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b1g-gy-0Rk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bzQ-jR-x0c">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="866"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="966"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="X7g-8G-0u2" userLabel="Header View " customClass="RestaurantDetailHeaderView" customModule="FoodPin" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
@@ -201,6 +201,37 @@
                                         <outlet property="nameLabel" destination="ThN-hc-bHq" id="XTY-dy-LuM"/>
                                         <outlet property="typeLabel" destination="7dw-vC-5OH" id="2V0-dJ-hsi"/>
                                     </connections>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="DEO-v8-oXi">
+                                    <rect key="frame" x="0.0" y="780" width="414" height="90"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="he6-ks-c2b" customClass="DesignableButton" customModule="FoodPin" customModuleProvider="target">
+                                            <rect key="frame" x="15" y="22" width="384" height="47"/>
+                                            <color key="backgroundColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="47" id="VJH-zk-tNy"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <state key="normal" title="Rate it">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <segue destination="EDM-ol-KIK" kind="presentation" identifier="showReview" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="KlI-AF-h2C"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="he6-ks-c2b" secondAttribute="trailing" constant="15" id="LSh-hg-8N9"/>
+                                        <constraint firstItem="he6-ks-c2b" firstAttribute="leading" secondItem="DEO-v8-oXi" secondAttribute="leading" constant="15" id="MOT-r5-gbg"/>
+                                        <constraint firstAttribute="bottom" secondItem="he6-ks-c2b" secondAttribute="bottom" constant="21" id="UHK-Ue-1m7"/>
+                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailIconTextCell" rowHeight="71" id="LUt-r8-hVo" customClass="RestaurantDetailIconTextCell" customModule="FoodPin" customModuleProvider="target">
@@ -346,7 +377,7 @@
                         <viewLayoutGuide key="safeArea" id="AP5-Zd-msY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Lne-yY-CO0"/>
-                    <size key="freeformSize" width="414" height="900"/>
+                    <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="headerView" destination="X7g-8G-0u2" id="0BZ-tF-6rJ"/>
                         <outlet property="tableView" destination="bzQ-jR-x0c" id="xFY-ai-Svu"/>
@@ -355,6 +386,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHu-gI-nOL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1811.594202898551" y="23.4375"/>
+        </scene>
+        <!--Review View Controller-->
+        <scene sceneID="YJW-Dq-upZ">
+            <objects>
+                <viewController id="EDM-ol-KIK" customClass="ReviewViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kEU-pv-qjy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zsm-Jb-zEg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwZ-dK-JAb">
+                                <rect key="frame" x="355" y="74" width="33" height="32"/>
+                                <state key="normal" image="cross"/>
+                                <connections>
+                                    <segue destination="7YN-JY-OFo" kind="unwind" unwindAction="closeWithSegue:" id="x0O-WB-z3s"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GcX-CQ-Bhg">
+                                <rect key="frame" x="98" y="207.66666666666663" width="218" height="481"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5v-am-aDP">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="82"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="Love" image="love">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgR-e1-tN3">
+                                        <rect key="frame" x="0.0" y="92.000000000000028" width="177" height="83"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="Cool" image="cool">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7x-mT-MPv">
+                                        <rect key="frame" x="0.0" y="185.00000000000003" width="218" height="85.999999999999972"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="Happy" image="happy">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbg-Jj-viK">
+                                        <rect key="frame" x="0.0" y="281" width="162" height="87"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="Sad" image="sad">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-IU-SF4">
+                                        <rect key="frame" x="0.0" y="378" width="205" height="103"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="Angry" image="angry">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zsm-Jb-zEg" firstAttribute="leading" secondItem="hpA-qp-h4i" secondAttribute="leading" id="Qjc-9f-Y3D"/>
+                            <constraint firstItem="hpA-qp-h4i" firstAttribute="trailing" secondItem="hwZ-dK-JAb" secondAttribute="trailing" constant="26" id="SaZ-la-7tL"/>
+                            <constraint firstItem="hpA-qp-h4i" firstAttribute="bottom" secondItem="zsm-Jb-zEg" secondAttribute="bottom" id="Ux8-UA-2Bi"/>
+                            <constraint firstItem="zsm-Jb-zEg" firstAttribute="top" secondItem="hpA-qp-h4i" secondAttribute="top" id="V1F-w8-Ae6"/>
+                            <constraint firstItem="hpA-qp-h4i" firstAttribute="trailing" secondItem="zsm-Jb-zEg" secondAttribute="trailing" id="fOw-xe-bs7"/>
+                            <constraint firstItem="GcX-CQ-Bhg" firstAttribute="centerY" secondItem="kEU-pv-qjy" secondAttribute="centerY" id="fyE-vx-fV4"/>
+                            <constraint firstItem="hwZ-dK-JAb" firstAttribute="top" secondItem="hpA-qp-h4i" secondAttribute="top" constant="30" id="qXO-eD-ijO"/>
+                            <constraint firstItem="GcX-CQ-Bhg" firstAttribute="centerX" secondItem="kEU-pv-qjy" secondAttribute="centerX" id="wrd-yn-GG8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hpA-qp-h4i"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="zsm-Jb-zEg" id="iHJ-VY-8Ls"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vtI-Rc-vaL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="7YN-JY-OFo" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2577" y="404"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="sLq-4K-QUU">
@@ -384,10 +496,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyi-Zp-sVj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2642" y="24"/>
+            <point key="canvasLocation" x="2577" y="-267"/>
         </scene>
     </scenes>
     <resources>
+        <image name="angry" width="78" height="103"/>
+        <image name="cool" width="78" height="83"/>
+        <image name="cross" width="33" height="32"/>
+        <image name="happy" width="78" height="86"/>
         <image name="heart-tick" width="22" height="21"/>
+        <image name="love" width="78" height="82"/>
+        <image name="sad" width="78" height="87"/>
     </resources>
 </document>
