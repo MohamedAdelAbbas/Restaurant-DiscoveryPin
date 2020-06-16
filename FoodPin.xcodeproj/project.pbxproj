@@ -39,7 +39,7 @@
 		76FB037E2492C3460028253B /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB037D2492C3460028253B /* UIColor+Ext.swift */; };
 		76FB03812492C98F0028253B /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB03802492C98F0028253B /* UINavigationController+Ext.swift */; };
 		76FD6E252499774A001A15C6 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD6E242499774A001A15C6 /* RoundedTextField.swift */; };
-		76FD6E2724997B13001A15C6 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD6E2624997B13001A15C6 /* DesignableTextField.swift */; };
+		76FD6E2924997F8D001A15C6 /* NewRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD6E2824997F8D001A15C6 /* NewRestaurantController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +77,7 @@
 		76FB037D2492C3460028253B /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		76FB03802492C98F0028253B /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		76FD6E242499774A001A15C6 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
-		76FD6E2624997B13001A15C6 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		76FD6E2824997F8D001A15C6 /* NewRestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +107,7 @@
 				761C9EAE2401B8AC0027359A /* RestaurantDetailViewController.swift */,
 				76BAE4E02497FE4400DCD3B4 /* MapViewController.swift */,
 				762DEF6D2498DFF200973764 /* ReviewViewController.swift */,
+				76FD6E2824997F8D001A15C6 /* NewRestaurantController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				76605DD4249230EC00FE34EC /* UIView+Extensions.swift */,
-				76FD6E2624997B13001A15C6 /* DesignableTextField.swift */,
 				76FB037D2492C3460028253B /* UIColor+Ext.swift */,
 				76FB03802492C98F0028253B /* UINavigationController+Ext.swift */,
 				762DEF6B2498DAE500973764 /* DesignableButton.swift */,
@@ -308,7 +308,6 @@
 				76BAE4DD2497E7BE00DCD3B4 /* RestaurantDetailSeparatorCell.swift in Sources */,
 				7638F43A23F100030058E7ED /* RestaurantTableViewCell.swift in Sources */,
 				76C257C723EF6D9600EAB05F /* AppDelegate.swift in Sources */,
-				76FD6E2724997B13001A15C6 /* DesignableTextField.swift in Sources */,
 				762B9CA9243103DB009DD90E /* Restaurant.swift in Sources */,
 				762DEF6E2498DFF200973764 /* ReviewViewController.swift in Sources */,
 				76FB03812492C98F0028253B /* UINavigationController+Ext.swift in Sources */,
@@ -317,6 +316,7 @@
 				761C9EAF2401B8AC0027359A /* RestaurantDetailViewController.swift in Sources */,
 				76C257C923EF6D9600EAB05F /* SceneDelegate.swift in Sources */,
 				76FB037E2492C3460028253B /* UIColor+Ext.swift in Sources */,
+				76FD6E2924997F8D001A15C6 /* NewRestaurantController.swift in Sources */,
 				76605DD5249230EC00FE34EC /* UIView+Extensions.swift in Sources */,
 				76C257DB23EF724E00EAB05F /* RestaurantTableViewController.swift in Sources */,
 				76BAE4E12497FE4400DCD3B4 /* MapViewController.swift in Sources */,
