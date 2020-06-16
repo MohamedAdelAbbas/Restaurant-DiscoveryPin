@@ -19,9 +19,11 @@ class ReviewViewController: UIViewController {
         SetupBlurEffect()
         // start state
         let moveRightTransform = CGAffineTransform.init(translationX: 600, y: 0)
-        // Make the button invisible
+        let scaleUpTransform = CGAffineTransform.init(scaleX: 5.0, y: 5.0)
+        let moveScaleTransform = scaleUpTransform.concatenating(moveRightTransform)
+        // Make the button invisible and move off the screen
         for rateButton in rateButtons {
-            rateButton.transform = moveRightTransform // start state
+            rateButton.transform = moveScaleTransform
             rateButton.alpha = 0
         }
     }
