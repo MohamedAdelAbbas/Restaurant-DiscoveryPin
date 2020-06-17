@@ -16,7 +16,7 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet var headerView: RestaurantDetailHeaderView!
 
     // MARK: Properties
-    var restaurant = Restaurant()
+    var restaurant: RestaurantMO!
 
     // MARK: View Controller Life Cycle
 
@@ -40,7 +40,9 @@ class RestaurantDetailViewController: UIViewController {
         // Configure header view
         headerView.nameLabel.text = restaurant.name
         headerView.typeLabel.text = restaurant.type
-        headerView.headerImageView.image = UIImage(named: restaurant.image)
+        if let restaurantImage = restaurant.image {
+            headerView.headerImageView.image = UIImage(data: restaurantImage as Data)
+        }
         headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
     }
     func setupTableView(){
@@ -138,7 +140,10 @@ extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDele
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing
                 : RestaurantDetailMapCell.self), for: indexPath) as! RestaurantDetailMapCell
-            cell.configure(location: restaurant.location)
+            //cell.configure(location: restaurant.location)
+            if let restaurantLocation = restaurant.location {
+                cell.configure(location: restaurantLocation)
+            }
             cell.selectionStyle = .none
             return cell
         default:
