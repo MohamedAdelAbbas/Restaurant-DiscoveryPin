@@ -553,13 +553,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="DLr-ll-sqN">
-                                                    <rect key="frame" x="195" y="91" width="24" height="18"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="DLr-ll-sqN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="DLr-ll-sqN" secondAttribute="bottom" id="H57-Zd-pzB"/>
+                                                <constraint firstItem="DLr-ll-sqN" firstAttribute="top" secondItem="QxO-k5-PSh" secondAttribute="top" id="Sao-xF-Jpc"/>
                                                 <constraint firstItem="DLr-ll-sqN" firstAttribute="centerY" secondItem="QxO-k5-PSh" secondAttribute="centerY" id="gh7-sb-Lyo"/>
                                                 <constraint firstItem="DLr-ll-sqN" firstAttribute="centerX" secondItem="QxO-k5-PSh" secondAttribute="centerX" id="hsm-nx-I9d"/>
+                                                <constraint firstItem="DLr-ll-sqN" firstAttribute="leading" secondItem="QxO-k5-PSh" secondAttribute="leading" id="jrI-LA-mLC"/>
+                                                <constraint firstAttribute="trailing" secondItem="DLr-ll-sqN" secondAttribute="trailing" id="uwA-U0-DFg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -745,6 +749,12 @@
                                 <segue destination="JeL-kg-tUm" kind="unwind" unwindAction="unwindToHomeWithSegue:" id="tLS-zY-YiG"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="save" id="PAA-Lh-S5v">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="saveButtonTappedWithSender:" destination="7tu-11-24P" id="ahX-5r-98F"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="900"/>
                     <connections>
@@ -791,5 +801,6 @@
         <image name="photo" width="24" height="18"/>
         <image name="plus" width="16" height="16"/>
         <image name="sad" width="78" height="87"/>
+        <image name="save" width="20" height="20"/>
     </resources>
 </document>

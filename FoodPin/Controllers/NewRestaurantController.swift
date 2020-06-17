@@ -56,7 +56,25 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         tableView.separatorStyle = .none
     }
     // MARK: Action
-    
+    @IBAction func saveButtonTapped(sender: AnyObject) {
+        
+        if nameTextField.text == "" || typeTextField.text == "" || addressTextField.text == "" || phoneTextField.text == "" || descriptionTextView.text == "" {
+            let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required.", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            present(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        
+        print("Name: \(nameTextField.text ?? "")")
+        print("Type: \(typeTextField.text ?? "")")
+        print("Location: \(addressTextField.text ?? "")")
+        print("Phone: \(phoneTextField.text ?? "")")
+        print("Description: \(descriptionTextView.text ?? "")")
+        
+        dismiss(animated: true, completion: nil)
+    }
     // MARK: - UITextFieldDelegate methods
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -139,6 +157,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             photoImageView.contentMode = .scaleAspectFill
             photoImageView.clipsToBounds = true
         }
+        
         dismiss(animated: true, completion: nil)
     }
     
