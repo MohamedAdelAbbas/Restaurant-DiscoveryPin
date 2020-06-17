@@ -9,11 +9,11 @@
 import UIKit
 
 class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-
+    
     // MARK: Outlets
     @IBOutlet var photoImageView: UIImageView!
     
-   
+    
     @IBOutlet var nameTextField: RoundedTextField! {
         didSet {
             nameTextField.tag = 1
@@ -68,7 +68,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
     }
     // MARK: Class Methods
     func setupNavbar() {
-       // Configure navigation bar appearance
+        // Configure navigation bar appearance
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.shadowImage = UIImage()
         if let customFont = UIFont(name: "Rubik-Medium", size: 35.0) {
@@ -76,12 +76,12 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         }
     }
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 6
@@ -128,6 +128,18 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             
             present(photoSourceRequestController, animated: true, completion: nil)
         }
+    }
+    
+    // MARK: - UIImagePickerControllerDelegate methods
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            photoImageView.image = selectedImage
+            photoImageView.contentMode = .scaleAspectFill
+            photoImageView.clipsToBounds = true
+        }
+        dismiss(animated: true, completion: nil)
     }
     
 }
