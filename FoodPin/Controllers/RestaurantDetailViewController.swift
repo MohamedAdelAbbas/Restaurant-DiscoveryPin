@@ -25,7 +25,7 @@ class RestaurantDetailViewController: UIViewController {
         setupTableView()
         setupNavBar()
         setupHeaderView()
-    tableView.contentInsetAdjustmentBehavior = .never
+        tableView.contentInsetAdjustmentBehavior = .never
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

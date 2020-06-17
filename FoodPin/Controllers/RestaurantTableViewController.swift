@@ -95,7 +95,6 @@ class RestaurantTableViewController: UITableViewController {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
             // Delete the row from the data source
             self.restaurants.remove(at: indexPath.row)
-            
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             
             // Call completion handler with true to indicate
