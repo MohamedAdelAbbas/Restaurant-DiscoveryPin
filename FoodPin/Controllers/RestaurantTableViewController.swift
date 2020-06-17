@@ -10,6 +10,9 @@ import UIKit
 import CoreData
 class RestaurantTableViewController: UITableViewController {
     
+    //MARK: Outlet
+    @IBOutlet var emptyRestaurantView: UIView!
+    
     var restaurants: [RestaurantMO] = []
     // MARK: - View controller life cycle
     
@@ -18,6 +21,9 @@ class RestaurantTableViewController: UITableViewController {
         
         tableView.cellLayoutMarginsFollowReadableWidth = true
         setupNavbar()
+        // Prepare the empty view
+        tableView.backgroundView = emptyRestaurantView
+        tableView.backgroundView?.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +50,13 @@ class RestaurantTableViewController: UITableViewController {
     
     // MARK: - Table view data sourc
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        if restaurants.count > 0 {
+            tableView.backgroundView?.isHidden = true
+            tableView.separatorStyle = .singleLine
+        } else {
+            tableView.backgroundView?.isHidden = false
+            tableView.separatorStyle = .none
+        } 
         return 1
     }
     
