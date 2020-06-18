@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
     
     //MARK: Outlet
     @IBOutlet var emptyRestaurantView: UIView!
@@ -16,6 +16,10 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     //MARK: Properties
     var restaurants: [RestaurantMO] = []
     var fetchResultController: NSFetchedResultsController<RestaurantMO>!
+    
+    var searchController: UISearchController!
+    var searchResults: [RestaurantMO] = []
+
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
@@ -24,11 +28,11 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.cellLayoutMarginsFollowReadableWidth = true
         setupNavbar()
         fetchData()
+        setupSearchBar()
+        
         // Prepare the empty view
         tableView.backgroundView = emptyRestaurantView
         tableView.backgroundView?.isHidden = true
-        
-        
         
     } // end viewLoad
     
@@ -47,6 +51,44 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor(red: 231, green: 76, blue: 60), NSAttributedString.Key.font: customFont ]
         }
         navigationController?.hidesBarsOnSwipe = true
+    }
+    func setupSearchBar(){
+        //Add Search Bar
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        //  self.navigationItem.searchController = searchController
+        
+        // Replace the follown line of code with the one above
+        // if you want to put the search bar in the navigation bar
+        tableView.tableHeaderView = searchController.searchBar
+        // search bar  customization
+        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.barTintColor = .white
+        //searchController.searchBar.backgroundImage = UIImage()
+        searchController.searchBar.tintColor = #colorLiteral(red: 0.9058823529, green: 0.2980392157, blue: 0.2352941176, alpha: 1)
+        searchController.searchBar.enablesReturnKeyAutomatically = true
+        
+    }
+    
+    // MARK: - Search methods
+    
+    func filterContent(for searchText: String) {
+        searchResults = restaurants.filter({ (restaurant) -> Bool in
+            if let name = restaurant.name, let location = restaurant.location {
+                
+                let isMatch = name.localizedCaseInsensitiveContains(searchText) || location.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+            
+            return false
+        })
+    }
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            tableView.reloadData()
+        }
     }
     //MARK: - Core Data Methods
     
@@ -118,26 +160,31 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return restaurants.count
+        if searchController.isActive {
+            return searchResults.count
+        } else {
+            return restaurants.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
         let cellIdentifier = "datacell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for:indexPath)as! RestaurantTableViewCell
-        cell.nameLabel.text = restaurants[indexPath.row].name
-       // cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
-        if let restaurantImage = restaurants[indexPath.row].image {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for:
+            indexPath) as! RestaurantTableViewCell
+        // Determine if we get the restaurant from search result or the original array
+        let restaurant = (searchController.isActive) ? searchResults[indexPath.row] :
+            restaurants[indexPath.row]
+        // Configure the cell...
+        cell.nameLabel.text = restaurant.name
+        // cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
+        if let restaurantImage = restaurant.image {
             cell.thumbnailImageView.image = UIImage(data: restaurantImage as Data)
         }
-        cell.locationLabel.text = restaurants[indexPath.row].location
-        cell.typeLabel.text = restaurants[indexPath.row].type
-        cell.heartImageView.isHidden = restaurants[indexPath.row].isVisited ? false : true
+        cell.locationLabel.text = restaurant.location
+        cell.typeLabel.text = restaurant.type
+        cell.heartImageView.isHidden = restaurant.isVisited ? false : true
         return cell
     }
-    
     // MARK: - Table view delegate
     
     // Swipe for More Actions Using UIContextualAction and more feture swipe to right
@@ -205,6 +252,14 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [checkInAction])
         return swipeConfiguration
     }
+    // don't want to show the buttons in the search results
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+           if searchController.isActive {
+               return false
+           } else {
+               return true
+           }
+       }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
