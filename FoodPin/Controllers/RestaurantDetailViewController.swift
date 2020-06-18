@@ -44,6 +44,9 @@ class RestaurantDetailViewController: UIViewController {
             headerView.headerImageView.image = UIImage(data: restaurantImage as Data)
         }
         headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
+        if let rating = restaurant.rating {
+            headerView.ratingImageView.image = UIImage(named: rating)
+        }
     }
     func setupTableView(){
         // Configure the table view's style
@@ -85,6 +88,8 @@ class RestaurantDetailViewController: UIViewController {
             if let rating = segue.identifier {
                 self.restaurant.rating = rating
                 self.headerView.ratingImageView.image = UIImage(named: rating)
+                appDelegate.saveContext()
+                
                 let scaleTransform = CGAffineTransform.init(scaleX: 0.1, y: 0.1)
                 self.headerView.ratingImageView.transform = scaleTransform
                 self.headerView.ratingImageView.alpha = 0
@@ -116,26 +121,26 @@ extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDele
                 : RestaurantDetailIconTextCell.self), for: indexPath) as! RestaurantDetailIconTextCell
             cell.iconImageView.image = UIImage(named: "phone")
             cell.shortTextLabel.text = restaurant.phone
-            cell.selectionStyle = .none
+            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing
                 : RestaurantDetailIconTextCell.self), for: indexPath) as! RestaurantDetailIconTextCell
             cell.iconImageView.image = UIImage(named: "map")
             cell.shortTextLabel.text = restaurant.location
-            cell.selectionStyle = .none
+            
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing
                 : RestaurantDetailTextCell.self), for: indexPath) as! RestaurantDetailTextCell
-            cell.descriptionLabel.text = restaurant.description
-            cell.selectionStyle = .none
+            cell.descriptionLabel.text = restaurant.summary
+           
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing
                 : RestaurantDetailSeparatorCell.self), for: indexPath) as! RestaurantDetailSeparatorCell
             cell.titleLabel.text = "HOW TO GET HERE"
-            cell.selectionStyle = .none
+            
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing
@@ -144,7 +149,7 @@ extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDele
             if let restaurantLocation = restaurant.location {
                 cell.configure(location: restaurantLocation)
             }
-            cell.selectionStyle = .none
+           
             return cell
         default:
             fatalError("Failed to instantiate the table view cell for detail view controller")

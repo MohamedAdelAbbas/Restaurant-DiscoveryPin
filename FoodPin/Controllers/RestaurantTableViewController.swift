@@ -143,7 +143,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     // Swipe for More Actions Using UIContextualAction and more feture swipe to right
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
-            // Delete the row from the data store
+            
+            //MARK: Delete the row from the data store
             let restaurantToDelete = self.fetchResultController.object(at: indexPath)
             managedContext.delete(restaurantToDelete)
             appDelegate.saveContext()
