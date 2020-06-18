@@ -13,8 +13,6 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
     
     // MARK: Outlets
     @IBOutlet var photoImageView: UIImageView!
-    
-    
     @IBOutlet var nameTextField: RoundedTextField! {
         didSet {
             nameTextField.tag = 1
@@ -48,7 +46,8 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         }
     }
     // MARK: Properties
-    
+    var restaurant: RestaurantMO!
+
     // MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,9 +72,46 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         print("Location: \(addressTextField.text ?? "")")
         print("Phone: \(phoneTextField.text ?? "")")
         print("Description: \(descriptionTextView.text ?? "")")
+        //MARK: save in core Data
+        
+        // Saving the restaurant to database
+        let restaurant = RestaurantMO(context: managedContext)
+        restaurant.name = nameTextField.text
+        restaurant.type = typeTextField.text
+        restaurant.location = addressTextField.text
+        restaurant.phone = phoneTextField.text
+        restaurant.summary = descriptionTextView.text
+        restaurant.isVisited = false
+        
+        if let restaurantImage = photoImageView.image {
+            restaurant.image = restaurantImage.pngData()
+        }
+        
+        print("Saving data to context ...")
+        appDelegate.saveContext()
         
         dismiss(animated: true, completion: nil)
     }
+    /*
+     {
+     let restaurant = RestaurantMO(context: managedContext)
+     oldGoal.goalDescription = lastRemovedGoalDesc
+     oldGoal.goalType = lastRemovedGoalType
+                oldGoal.goalCompleationValue = lastRemovedGoalCompletionValue!
+                oldGoal.goalProgress = lastRemovedGoalProgress!
+                
+                do {
+                    try managedContext.save()
+                    undoView.isHidden = true
+                     fetchCoreDataObjects()
+                     tableview.reloadData()
+                    print("Successfully undo'd")
+                } catch {
+                    debugPrint("Could not undo \(error.localizedDescription)")
+                }
+     }
+     
+     */
     // MARK: - UITextFieldDelegate methods
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
