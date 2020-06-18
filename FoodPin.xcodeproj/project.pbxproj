@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		760EF7DC249A70C4002060DD /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 760EF7DA249A70C4002060DD /* FoodPin.xcdatamodeld */; };
+		760EF7E0249AF9C5002060DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 760EF7DF249AF9C5002060DD /* README.md */; };
 		761C9EAF2401B8AC0027359A /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761C9EAE2401B8AC0027359A /* RestaurantDetailViewController.swift */; };
 		762B9CA9243103DB009DD90E /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B9CA8243103DB009DD90E /* Restaurant.swift */; };
 		762DEF6C2498DAE500973764 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762DEF6B2498DAE500973764 /* DesignableButton.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		760EF7DB249A70C4002060DD /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
+		760EF7DF249AF9C5002060DD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		761C9EAE2401B8AC0027359A /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		762B9CA8243103DB009DD90E /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		762DEF6B2498DAE500973764 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		76C257C523EF6D9600EAB05F /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				760EF7DF249AF9C5002060DD /* README.md */,
 				76B2AC1124921BAC0025F02B /* Extensions */,
 				762B9CAA24311284009DD90E /* Model */,
 				762B9CAC243112A3009DD90E /* View */,
@@ -292,6 +295,7 @@
 				76B2AC0A2490DD910025F02B /* Rubik-Regular.ttf in Resources */,
 				76B2AC092490DD910025F02B /* Rubik-Italic.ttf in Resources */,
 				76B2AC052490DD910025F02B /* Rubik-Black.ttf in Resources */,
+				760EF7E0249AF9C5002060DD /* README.md in Resources */,
 				76B2AC082490DD910025F02B /* Rubik-Light.ttf in Resources */,
 				76C257CE23EF6D9600EAB05F /* Main.storyboard in Resources */,
 				76B2AC0B2490DD910025F02B /* Rubik-Medium.ttf in Resources */,
