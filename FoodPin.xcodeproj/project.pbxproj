@@ -100,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				762B9CA8243103DB009DD90E /* Restaurant.swift */,
+				760EF7DA249A70C4002060DD /* FoodPin.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,7 +223,6 @@
 				76C257C623EF6D9600EAB05F /* AppDelegate.swift */,
 				76C257C823EF6D9600EAB05F /* SceneDelegate.swift */,
 				76C257D423EF6D9A00EAB05F /* Info.plist */,
-				760EF7DA249A70C4002060DD /* FoodPin.xcdatamodeld */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";

@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
     //MARK: Outlet
     @IBOutlet var emptyRestaurantView: UIView!
@@ -24,11 +24,11 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.cellLayoutMarginsFollowReadableWidth = true
         setupNavbar()
         fetchData()
         setupSearchBar()
+        
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         
         // Prepare the empty view
         tableView.backgroundView = emptyRestaurantView
@@ -57,11 +57,11 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        //  self.navigationItem.searchController = searchController
+        self.navigationItem.searchController = searchController
         
         // Replace the follown line of code with the one above
         // if you want to put the search bar in the navigation bar
-        tableView.tableHeaderView = searchController.searchBar
+       //tableView.tableHeaderView = searchController?.searchBar
         // search bar  customization
         searchController.searchBar.placeholder = "Search restaurants..."
         searchController.searchBar.barTintColor = .white
@@ -252,7 +252,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [checkInAction])
         return swipeConfiguration
     }
-    // don't want to show the buttons in the search results
+    // Disable share and delete buttons when in search mode
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
            if searchController.isActive {
                return false
@@ -266,7 +266,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RestaurantDetailViewController
-                destinationController.restaurant = restaurants[indexPath.row]
+                // Alter Segue in DetailsVC in Search Mode
+                destinationController.restaurant = (searchController?.isActive)! ? searchResults[indexPath.row] : restaurants[indexPath.row]
             }
         }
     }
