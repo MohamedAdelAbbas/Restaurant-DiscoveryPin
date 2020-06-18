@@ -1,5 +1,5 @@
 # Restaurant-DiscoveryPin
-An iOS restaurant application based on tutorials from Appcoda
+
 
 ![foodpin10](https://user-images.githubusercontent.com/12696030/42409404-a09afcce-81e2-11e8-9a5e-2fec90a2c1d2.png) 
 ![foodpin8](https://user-images.githubusercontent.com/12696030/42320125-e6c2270e-805c-11e8-8296-02cf448fda88.png)
