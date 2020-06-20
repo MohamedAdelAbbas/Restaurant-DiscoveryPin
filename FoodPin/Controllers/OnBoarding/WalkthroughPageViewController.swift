@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+protocol WalkthroughPageViewControllerDelegate: class {
+    func didUpdatePageIndex(currentIndex: Int)
+}
 class WalkthroughPageViewController: UIPageViewController {
     
     //MARK:Outlets
@@ -19,12 +21,15 @@ class WalkthroughPageViewController: UIPageViewController {
                            "Search and locate your favourite restaurant on Maps",
                            "Find restaurants shared by your friends and other foodies"]
     var currentIndex = 0
-    
+    weak var walkthroughDelegate: WalkthroughPageViewControllerDelegate?
+
     // MARK: - View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set the data source to itself
         dataSource = self
+        delegate = self
+
         // Create the first walkthrough screen
         if let startingViewController = contentViewController(at: 0) {
             setViewControllers([startingViewController], direction: .forward, animated
@@ -63,7 +68,7 @@ class WalkthroughPageViewController: UIPageViewController {
 
 }
 
-extension WalkthroughPageViewController:UIPageViewControllerDataSource {
+extension WalkthroughPageViewController:UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     // MARK: - UIPage data source
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = (viewController as! WalkthroughContentViewController).index
@@ -78,4 +83,12 @@ extension WalkthroughPageViewController:UIPageViewControllerDataSource {
     }
     
     // MARK: - UIPage view delegate
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+           if completed {
+               if let contentViewController = pageViewController.viewControllers?.first as? WalkthroughContentViewController {
+                   currentIndex = contentViewController.index
+                   walkthroughDelegate?.didUpdatePageIndex(currentIndex: contentViewController.index)
+               }
+           }
+       }
 }

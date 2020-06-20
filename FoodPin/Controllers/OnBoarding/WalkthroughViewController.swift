@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WalkthroughViewController: UIViewController {
+class WalkthroughViewController: UIViewController, WalkthroughPageViewControllerDelegate {
     //MARK: Outlet
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var nextButton: UIButton! {
@@ -43,6 +43,8 @@ class WalkthroughViewController: UIViewController {
         }
         updateUI()
     }
+    // MARK: Class Methods
+
     func updateUI() {
         if let index = walkthroughPageViewController?.currentIndex {
             switch index {
@@ -57,11 +59,16 @@ class WalkthroughViewController: UIViewController {
             pageControl.currentPage = index
         }
     }
+    // Delegate Methods
+    func didUpdatePageIndex(currentIndex: Int) {
+        updateUI()
+    }
     //MARK: Navagtion
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination
         if let pageViewController = destination as? WalkthroughPageViewController {
             walkthroughPageViewController = pageViewController
+            walkthroughPageViewController?.walkthroughDelegate = self
         }
     }
 }
