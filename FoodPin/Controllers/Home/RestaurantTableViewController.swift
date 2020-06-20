@@ -19,7 +19,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     var searchController: UISearchController!
     var searchResults: [RestaurantMO] = []
-
+    
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         navigationController?.hidesBarsOnSwipe = true
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         if UserDefaults.standard.bool(forKey: "hasViewedWalkthrough") {
             return
@@ -70,7 +70,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         // Replace the follown line of code with the one above
         // if you want to put the search bar in the navigation bar
-       //tableView.tableHeaderView = searchController?.searchBar
+        //tableView.tableHeaderView = searchController?.searchBar
         // search bar  customization
         searchController.searchBar.placeholder = "Search restaurants..."
         searchController.searchBar.barTintColor = .white
@@ -263,12 +263,12 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
     // Disable share and delete buttons when in search mode
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-           if searchController.isActive {
-               return false
-           } else {
-               return true
-           }
-       }
+        if searchController.isActive {
+            return false
+        } else {
+            return true
+        }
+    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
