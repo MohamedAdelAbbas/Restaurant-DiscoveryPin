@@ -66,18 +66,19 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        self.navigationItem.searchController = searchController
+        //self.navigationItem.searchController = searchController
         
         // Replace the follown line of code with the one above
         // if you want to put the search bar in the navigation bar
-        //tableView.tableHeaderView = searchController?.searchBar
+        tableView.tableHeaderView = searchController?.searchBar
         // search bar  customization
         searchController.searchBar.placeholder = "Search restaurants..."
         searchController.searchBar.barTintColor = .white
         //searchController.searchBar.backgroundImage = UIImage()
         searchController.searchBar.tintColor = #colorLiteral(red: 0.9058823529, green: 0.2980392157, blue: 0.2352941176, alpha: 1)
         searchController.searchBar.enablesReturnKeyAutomatically = true
-        
+        //searchController.definesPresentationContext = true
+
     }
     
     // MARK: - Search methods
@@ -276,7 +277,11 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RestaurantDetailViewController
                 // Alter Segue in DetailsVC in Search Mode
+                
                 destinationController.restaurant = (searchController?.isActive)! ? searchResults[indexPath.row] : restaurants[indexPath.row]
+                destinationController.hidesBottomBarWhenPushed = true
+
+                searchController.isActive = false // hide search bar in Details VC
             }
         }
     }

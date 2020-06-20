@@ -92,26 +92,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         
         dismiss(animated: true, completion: nil)
     }
-    /*
-     {
-     let restaurant = RestaurantMO(context: managedContext)
-     oldGoal.goalDescription = lastRemovedGoalDesc
-     oldGoal.goalType = lastRemovedGoalType
-                oldGoal.goalCompleationValue = lastRemovedGoalCompletionValue!
-                oldGoal.goalProgress = lastRemovedGoalProgress!
-                
-                do {
-                    try managedContext.save()
-                    undoView.isHidden = true
-                     fetchCoreDataObjects()
-                     tableview.reloadData()
-                    print("Successfully undo'd")
-                } catch {
-                    debugPrint("Could not undo \(error.localizedDescription)")
-                }
-     }
-     
-     */
+   
     // MARK: - UITextFieldDelegate methods
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

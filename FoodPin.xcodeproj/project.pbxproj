@@ -40,6 +40,8 @@
 		76E30D54249E5F83001E6249 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E30D53249E5F83001E6249 /* WalkthroughContentViewController.swift */; };
 		76E30D56249E6670001E6249 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E30D55249E6670001E6249 /* WalkthroughPageViewController.swift */; };
 		76E30D5A249E70BC001E6249 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E30D59249E70BC001E6249 /* WalkthroughViewController.swift */; };
+		76E30D5D249EBC5C001E6249 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76E30D5B249EBC5C001E6249 /* About.storyboard */; };
+		76E30D5F249EBCD7001E6249 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76E30D5E249EBCD7001E6249 /* Discover.storyboard */; };
 		76FB037924925A8A0028253B /* RestaurantDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB037824925A8A0028253B /* RestaurantDetailIconTextCell.swift */; };
 		76FB037B24925C940028253B /* RestaurantDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB037A24925C940028253B /* RestaurantDetailTextCell.swift */; };
 		76FB037E2492C3460028253B /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB037D2492C3460028253B /* UIColor+Ext.swift */; };
@@ -84,6 +86,8 @@
 		76E30D53249E5F83001E6249 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		76E30D55249E6670001E6249 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		76E30D59249E70BC001E6249 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		76E30D5C249EBC5C001E6249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FoodPin/Storyboard/Base.lproj/About.storyboard; sourceTree = "<group>"; };
+		76E30D5E249EBCD7001E6249 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		76FB037824925A8A0028253B /* RestaurantDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailIconTextCell.swift; sourceTree = "<group>"; };
 		76FB037A24925C940028253B /* RestaurantDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTextCell.swift; sourceTree = "<group>"; };
 		76FB037D2492C3460028253B /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
@@ -140,8 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				76C257CC23EF6D9600EAB05F /* Main.storyboard */,
-				76C257D123EF6D9A00EAB05F /* LaunchScreen.storyboard */,
+				76E30D5E249EBCD7001E6249 /* Discover.storyboard */,
+				76E30D5B249EBC5C001E6249 /* About.storyboard */,
 				76E30D51249C4349001E6249 /* Onboarding.storyboard */,
+				76C257D123EF6D9A00EAB05F /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -315,11 +321,13 @@
 			files = (
 				76B2AC0E2490DD910025F02B /* Rubik-Bold.ttf in Resources */,
 				76C257D323EF6D9A00EAB05F /* LaunchScreen.storyboard in Resources */,
+				76E30D5D249EBC5C001E6249 /* About.storyboard in Resources */,
 				76B2AC0D2490DD910025F02B /* Rubik-BoldItalic.ttf in Resources */,
 				76C257D023EF6D9A00EAB05F /* Assets.xcassets in Resources */,
 				76B2AC072490DD910025F02B /* Rubik-BlackItalic.ttf in Resources */,
 				76B2AC0C2490DD910025F02B /* Rubik-LightItalic.ttf in Resources */,
 				76E30D52249C4349001E6249 /* Onboarding.storyboard in Resources */,
+				76E30D5F249EBCD7001E6249 /* Discover.storyboard in Resources */,
 				76B2AC062490DD910025F02B /* Rubik-MediumItalic.ttf in Resources */,
 				76B2AC0A2490DD910025F02B /* Rubik-Regular.ttf in Resources */,
 				76B2AC092490DD910025F02B /* Rubik-Italic.ttf in Resources */,
@@ -381,6 +389,14 @@
 				76C257D223EF6D9A00EAB05F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		76E30D5B249EBC5C001E6249 /* About.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76E30D5C249EBC5C001E6249 /* Base */,
+			);
+			name = About.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
