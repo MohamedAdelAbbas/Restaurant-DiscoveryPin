@@ -15,18 +15,18 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Page View Controller-->
+        <!--Walkthrough Page View Controller-->
         <scene sceneID="aKy-J0-Srd">
             <objects>
-                <pageViewController storyboardIdentifier="WalkthroughController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="V0V-Zi-VKT" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="WalkthroughPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="V0V-Zi-VKT" customClass="WalkthroughPageViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Wh-ob-j6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="826" y="686"/>
+            <point key="canvasLocation" x="709" y="-31"/>
         </scene>
-        <!--View Controller-->
+        <!--Walkthrough Content View Controller-->
         <scene sceneID="vBm-q4-Bxf">
             <objects>
-                <viewController id="fbw-bU-Zpx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkthroughContentViewController" id="fbw-bU-Zpx" customClass="WalkthroughContentViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ALU-ph-w8N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="451"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,13 +43,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ptv-5N-xI9">
                                         <rect key="frame" x="119" y="279" width="89.5" height="49.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEADING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h50-q8-oLk">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEADING" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h50-q8-oLk">
                                                 <rect key="frame" x="5.5" y="0.0" width="78.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subheading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNv-CA-TFm">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subheading" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNv-CA-TFm">
                                                 <rect key="frame" x="0.0" y="30.5" width="89.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -70,21 +70,26 @@
                         <viewLayoutGuide key="safeArea" id="FDe-Oo-p4L"/>
                     </view>
                     <size key="freeformSize" width="375" height="451"/>
+                    <connections>
+                        <outlet property="contentImageView" destination="Jqr-7E-BOW" id="RYc-mh-DOW"/>
+                        <outlet property="headingLabel" destination="h50-q8-oLk" id="sbR-a1-6Hz"/>
+                        <outlet property="subHeadingLabel" destination="fNv-CA-TFm" id="eGQ-FO-YQg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4M5-rU-OVq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="-13"/>
+            <point key="canvasLocation" x="1367" y="-78"/>
         </scene>
-        <!--View Controller-->
+        <!--Walkthrough View Controller-->
         <scene sceneID="acc-hK-OKv">
             <objects>
-                <viewController id="YGK-bO-HIw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkthroughViewController" modalPresentationStyle="fullScreen" id="YGK-bO-HIw" customClass="WalkthroughViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8c0-0X-Ohj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeH-gK-W3c">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="590"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="589.5"/>
                                 <connections>
                                     <segue destination="V0V-Zi-VKT" kind="embed" id="D2e-vF-VRV"/>
                                 </connections>
@@ -142,10 +147,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iqU-4n-Oau"/>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="LSj-1m-0Wz" id="dTa-eI-X4s"/>
+                        <outlet property="pageControl" destination="UKi-I0-A9p" id="y9K-Be-mx3"/>
+                        <outlet property="skipButton" destination="Ivl-be-OC9" id="M1A-T6-22e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwP-RA-dBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="286.95652173913044" y="65.625"/>
+            <point key="canvasLocation" x="0.0" y="72"/>
         </scene>
     </scenes>
 </document>

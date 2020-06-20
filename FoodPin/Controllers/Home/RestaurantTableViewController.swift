@@ -41,7 +41,12 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         navigationController?.hidesBarsOnSwipe = true
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        if let walkthroughViewController = storyboard.instantiateViewController(withIdentifier: "WalkthroughViewController") as? WalkthroughViewController {
+            present(walkthroughViewController, animated: true, completion: nil)
+        }
+    }
     func setupNavbar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         // Customize the navigation bar
