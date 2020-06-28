@@ -50,7 +50,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Xi-dC-t7c">
-                                                    <rect key="frame" x="75" y="0.0" width="258" height="58.333333333333336"/>
+                                                    <rect key="frame" x="75" y="0.0" width="293" height="58.333333333333336"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oJ-aD-cy1">
                                                             <rect key="frame" x="0.0" y="0.0" width="46.666666666666664" height="20.333333333333332"/>
@@ -72,19 +72,21 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="jo7-ip-aQ9">
-                                                    <rect key="frame" x="348" y="0.0" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="42g-Gx-Swx"/>
-                                                        <constraint firstAttribute="width" constant="20" id="pR1-TF-OEY"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                         </stackView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="jo7-ip-aQ9">
+                                            <rect key="frame" x="382" y="50.333333333333336" width="20" height="20.000000000000007"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="dy6-ee-D7R"/>
+                                                <constraint firstAttribute="width" constant="20" id="lK5-ch-MDk"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="NJ4-uo-drM" secondAttribute="trailing" id="BJI-My-9hG"/>
+                                        <constraint firstItem="76a-SE-Aq2" firstAttribute="centerY" secondItem="jo7-ip-aQ9" secondAttribute="centerY" id="XAM-kE-Zyb"/>
                                         <constraint firstItem="NJ4-uo-drM" firstAttribute="leading" secondItem="4Lc-R2-YwB" secondAttribute="leadingMargin" constant="6" id="nCo-Ru-3YB"/>
+                                        <constraint firstItem="jo7-ip-aQ9" firstAttribute="trailing" secondItem="4Lc-R2-YwB" secondAttribute="trailingMargin" constant="8" id="rQY-ab-mff"/>
                                         <constraint firstItem="NJ4-uo-drM" firstAttribute="top" secondItem="4Lc-R2-YwB" secondAttribute="topMargin" id="z6q-tH-N9g"/>
                                         <constraint firstItem="NJ4-uo-drM" firstAttribute="bottom" secondItem="4Lc-R2-YwB" secondAttribute="bottomMargin" id="zua-yS-jru"/>
                                     </constraints>
@@ -189,7 +191,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThN-hc-bHq" userLabel="Name Label">
-                                            <rect key="frame" x="14" y="271.33333333333331" width="91.666666666666671" height="41.666666666666686"/>
+                                            <rect key="frame" x="14" y="272" width="85.666666666666671" height="41"/>
                                             <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="35"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -242,7 +244,7 @@
                                     </connections>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="DEO-v8-oXi">
-                                    <rect key="frame" x="0.0" y="780" width="414" height="90"/>
+                                    <rect key="frame" x="0.0" y="779.66666793823242" width="414" height="90"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="he6-ks-c2b">
@@ -291,7 +293,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLG-f3-3MG">
-                                                            <rect key="frame" x="30" y="15.33333333333333" width="338" height="16.666666666666671"/>
+                                                            <rect key="frame" x="30" y="15.333333333333334" width="338" height="16.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -312,14 +314,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailTextCell" id="gvq-2S-hWT" customClass="RestaurantDetailTextCell" customModule="FoodPin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="449" width="414" height="44.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="449" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gvq-2S-hWT" id="iig-2x-EqY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEg-tU-cin">
-                                                    <rect key="frame" x="23" y="10.999999999999998" width="368" height="18.333333333333329"/>
+                                                    <rect key="frame" x="23" y="11" width="368" height="18"/>
                                                     <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -337,7 +339,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailSeparatorCell" id="qqN-ww-Sgv" customClass="RestaurantDetailSeparatorCell" customModule="FoodPin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="493.33333206176758" width="414" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="493" width="414" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qqN-ww-Sgv" id="fXL-56-sRq">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
@@ -374,7 +376,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailMapCell" rowHeight="215" id="27M-8o-tnF" customClass="RestaurantDetailMapCell" customModule="FoodPin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="537" width="414" height="215"/>
+                                        <rect key="frame" x="0.0" y="536.66666793823242" width="414" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="27M-8o-tnF" id="c9g-LA-J8f">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
@@ -818,6 +820,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zbd-dr-MRU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tg0-3p-ZAe">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
