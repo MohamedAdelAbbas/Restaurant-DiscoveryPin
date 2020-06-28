@@ -27,15 +27,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="82" id="Cgu-fV-aL6" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="82"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="100" id="Cgu-fV-aL6" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cgu-fV-aL6" id="4Lc-R2-YwB">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NJ4-uo-drM">
-                                            <rect key="frame" x="26" y="11" width="368" height="60"/>
+                                            <rect key="frame" x="26" y="11" width="368" height="78"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HF0-uu-Ph4">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -81,9 +81,19 @@
                                                 <constraint firstAttribute="width" constant="20" id="lK5-ch-MDk"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkp-Wa-nId">
+                                            <rect key="frame" x="381" y="8.6666666666666643" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="08y-UQ-RoO"/>
+                                                <constraint firstAttribute="height" constant="25" id="ItN-rz-e7c"/>
+                                            </constraints>
+                                            <state key="normal" image="share-1"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="NJ4-uo-drM" secondAttribute="trailing" id="BJI-My-9hG"/>
+                                        <constraint firstItem="1oJ-aD-cy1" firstAttribute="centerY" secondItem="fkp-Wa-nId" secondAttribute="centerY" id="EoZ-iw-aLH"/>
+                                        <constraint firstAttribute="trailing" secondItem="fkp-Wa-nId" secondAttribute="trailing" constant="8" id="N9n-Bb-tkn"/>
                                         <constraint firstItem="76a-SE-Aq2" firstAttribute="centerY" secondItem="jo7-ip-aQ9" secondAttribute="centerY" id="XAM-kE-Zyb"/>
                                         <constraint firstItem="NJ4-uo-drM" firstAttribute="leading" secondItem="4Lc-R2-YwB" secondAttribute="leadingMargin" constant="6" id="nCo-Ru-3YB"/>
                                         <constraint firstItem="jo7-ip-aQ9" firstAttribute="trailing" secondItem="4Lc-R2-YwB" secondAttribute="trailingMargin" constant="8" id="rQY-ab-mff"/>
@@ -869,5 +879,6 @@
         <image name="plus" width="16" height="16"/>
         <image name="sad" width="78" height="87"/>
         <image name="save" width="20" height="20"/>
+        <image name="share-1" width="40" height="40"/>
     </resources>
 </document>
