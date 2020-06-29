@@ -157,6 +157,24 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func share(_ sender: UIButton) {
+        // Get the selected row
+        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+        
+        guard tableView.indexPathForRow(at: buttonPosition) != nil else {return }
+        
+        // Display the share menu
+        let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .actionSheet)
+        let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertAction.Style.default, handler: nil)
+        let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertAction.Style.default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+        
+        shareMenu.addAction(twitterAction)
+        shareMenu.addAction(facebookAction)
+        shareMenu.addAction(cancelAction)
+        
+        self.present(shareMenu, animated: true, completion: nil)
+    }
     // MARK: - Table view data sourc
     override func numberOfSections(in tableView: UITableView) -> Int {
         if restaurants.count > 0 {

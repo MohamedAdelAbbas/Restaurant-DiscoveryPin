@@ -23,5 +23,6 @@ class RestaurantTableViewCell: UITableViewCell {
     }
     @IBOutlet var heartImageView: UIImageView!
 
-   
+    @IBOutlet weak var shareButton: UIButton!
+    
 }
