@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -51,9 +51,13 @@
 		76FB03812492C98F0028253B /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB03802492C98F0028253B /* UINavigationController+Ext.swift */; };
 		76FD6E252499774A001A15C6 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD6E242499774A001A15C6 /* RoundedTextField.swift */; };
 		76FD6E2924997F8D001A15C6 /* NewRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD6E2824997F8D001A15C6 /* NewRestaurantController.swift */; };
+		C810C1C766487521A11F3A73 /* Pods_FoodPin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232288330304FD8081ADD719 /* Pods_FoodPin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		232288330304FD8081ADD719 /* Pods_FoodPin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodPin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34FAB63FE03EC2A8E7085FAF /* Pods-FoodPin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodPin.debug.xcconfig"; path = "Target Support Files/Pods-FoodPin/Pods-FoodPin.debug.xcconfig"; sourceTree = "<group>"; };
+		51984246D64968DB83A1F00A /* Pods-FoodPin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodPin.release.xcconfig"; path = "Target Support Files/Pods-FoodPin/Pods-FoodPin.release.xcconfig"; sourceTree = "<group>"; };
 		760EF7DB249A70C4002060DD /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
 		760EF7DF249AF9C5002060DD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		761C9EAE2401B8AC0027359A /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			files = (
 				76F18420249EF27E00982E7F /* WebKit.framework in Frameworks */,
 				76BAE4DB2497C07600DCD3B4 /* MapKit.framework in Frameworks */,
+				C810C1C766487521A11F3A73 /* Pods_FoodPin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +215,7 @@
 			children = (
 				76F1841F249EF27E00982E7F /* WebKit.framework */,
 				76BAE4DA2497C07600DCD3B4 /* MapKit.framework */,
+				232288330304FD8081ADD719 /* Pods_FoodPin.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 				76C257C523EF6D9600EAB05F /* FoodPin */,
 				76C257C423EF6D9600EAB05F /* Products */,
 				76BAE4D92497C07600DCD3B4 /* Frameworks */,
+				8627C51A2085BD10AC922346 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -279,6 +286,15 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		8627C51A2085BD10AC922346 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34FAB63FE03EC2A8E7085FAF /* Pods-FoodPin.debug.xcconfig */,
+				51984246D64968DB83A1F00A /* Pods-FoodPin.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -286,9 +302,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76C257D723EF6D9A00EAB05F /* Build configuration list for PBXNativeTarget "FoodPin" */;
 			buildPhases = (
+				DF201FC1DC8A264EF5D04338 /* [CP] Check Pods Manifest.lock */,
 				76C257BF23EF6D9600EAB05F /* Sources */,
 				76C257C023EF6D9600EAB05F /* Frameworks */,
 				76C257C123EF6D9600EAB05F /* Resources */,
+				9F830392E63C78999707524D /* [CP] Embed Pods Frameworks */,
+				4E88E60898B6F33EDC54C031 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -358,6 +377,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E88E60898B6F33EDC54C031 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodPin/Pods-FoodPin-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodPin/Pods-FoodPin-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodPin/Pods-FoodPin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F830392E63C78999707524D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodPin/Pods-FoodPin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodPin/Pods-FoodPin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodPin/Pods-FoodPin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF201FC1DC8A264EF5D04338 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodPin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		76C257BF23EF6D9600EAB05F /* Sources */ = {
@@ -472,7 +550,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -526,7 +604,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -538,12 +616,14 @@
 		};
 		76C257D823EF6D9A00EAB05F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34FAB63FE03EC2A8E7085FAF /* Pods-FoodPin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4CPW54ZVP7;
 				INFOPLIST_FILE = FoodPin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,12 +638,14 @@
 		};
 		76C257D923EF6D9A00EAB05F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51984246D64968DB83A1F00A /* Pods-FoodPin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4CPW54ZVP7;
 				INFOPLIST_FILE = FoodPin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

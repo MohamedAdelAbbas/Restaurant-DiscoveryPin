@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreData
+import FacebookCore
+import FacebookLogin
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,7 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UITabBar.appearance().barTintColor = UIColor.black
         UITabBar.appearance().tintColor = UIColor(red: 231, green: 76, blue: 60)
         UITabBar.appearance().barTintColor = UIColor(red: 250, green: 250, blue: 250)
+        // to setup facebook
+        ApplicationDelegate.shared.application(
+            application,didFinishLaunchingWithOptions: launchOptions)
+
         return true
+    }
+    
+    func application(_ app: UIApplication,open url: URL,options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        ApplicationDelegate.shared.application(app,open: url,sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation])
     }
 
     // MARK: UISceneSession Lifecycle

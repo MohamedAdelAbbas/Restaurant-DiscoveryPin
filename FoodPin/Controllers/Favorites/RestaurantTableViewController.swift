@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import FacebookShare
 class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
     //MARK: Outlet
@@ -238,6 +239,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
                 activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
             } else  {
                 activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+                
             }
             
             if let popoverController = activityController.popoverPresentationController {
